@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Header</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1 class="logo-title">Cardiotensive</h1>
+        </div>
+        <nav class="navbar">
+          <ul class="nav-list">
+            <li><a href="#about">О продукте</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+            <button class="close-burger-btn">&times;</button>
+          </ul>
+          <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section class="product-banner">
+      <div class="banner-content">
+        <h1 class="banner-title">Добро пожаловать на Cardiotensive</h1>
+        <p class="banner-description">
+          Ваше лучшее решение для комфортной жизни и бизнеса. Попробуйте наш
+          продукт уже сегодня!
+        </p>
+        <button class="contact-btn" id="contact-btn">Связаться с нами</button>
+      </div>
+      <!-- Модальное окно -->
+      <div id="contact-modal" class="modal">
+        <div class="modal-content">
+          <button type="button" class="close-btn" id="modal-close-btn">
+            X
+          </button>
+          <h2 class="title-form">Форма обратной связи</h2>
+          <form id="contact-form">
+            <label for="name">Имя:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Введите ваше имя"
+              required
+            />
+            <label for="phone">Телефон:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Введите ваш телефон"
+              required
+            />
+            <button type="submit" class="send-btn">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="about-product">
+      <div class="advantage-block">
+        <div class="icon">
+          <img src="./icons/high-quality.svg" alt="Icon 1" />
+        </div>
+        <h3 class="advantage-title">Высокое качество</h3>
+        <p class="advantage-description">
+          Наш продукт производится с использованием лучших материалов и
+          технологий, чтобы обеспечить долговечность и надежность.
+        </p>
+      </div>
+      <div class="advantage-block">
+        <div class="icon">
+          <img src="./icons/modern-design.svg" alt="Icon 2" />
+        </div>
+        <h3 class="advantage-title">Современный дизайн</h3>
+        <p class="advantage-description">
+          Продукт разработан с учетом последних тенденций, чтобы он идеально
+          вписывался в любой интерьер.
+        </p>
+      </div>
+      <div class="advantage-block">
+        <div class="icon">
+          <img src="./icons/eco-friendly.svg" alt="Icon 3" />
+        </div>
+        <h3 class="advantage-title">Экологичность</h3>
+        <p class="advantage-description">
+          Мы заботимся об окружающей среде, и наш продукт соответствует всем
+          экологическим стандартам.
+        </p>
+      </div>
+    </section>
+    <section id="reviews" class="reviews-section">
+      <h2>Отзывы</h2>
+      <div class="reviews-container">
+        <div class="review-card">
+          <img src="./reviews/tom.jpg" alt="User 1" class="review-avatar" />
+          <h3 class="review-name">Том Холанд</h3>
+          <p class="review-text">
+            Этот продукт просто великолепен! Он изменил мою жизнь и я рекомендую
+            его всем!
+          </p>
+        </div>
+        <div class="review-card">
+          <img src="./reviews/camila.jpg" alt="User 2" class="review-avatar" />
+          <h3 class="review-name">Скарлет Йохансон</h3>
+          <p class="review-text">
+            Отличное качество и надежность. Очень доволен покупкой!
+          </p>
+        </div>
+        <div class="review-card">
+          <img src="./reviews/deniel.jpg" alt="User 3" class="review-avatar" />
+          <h3 class="review-name">Джонни Депп</h3>
+          <p class="review-text">
+            Продукт полностью оправдал мои ожидания. Приятно удивлён
+            результатом!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div id="backdrop" class="backdrop"></div>
+    <script defer src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,481 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: green;
+  color: white;
+  padding: 10px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo-title {
+  margin: 0;
+  font-size: 24px;
+  color: brown;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0 15px;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+.close-burger-btn {
+  visibility: hidden;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .container {
+    justify-content: space-between;
+  }
+
+  .logo {
+    text-align: center;
+    flex: 1;
+  }
+
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100%;
+    background-color: darkolivegreen;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+  }
+
+  .nav-list.active {
+    right: 0;
+  }
+
+  .nav-list li {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .close-burger-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    visibility: visible;
+  }
+
+  .nav-list.active .close-btn {
+    display: block;
+  }
+}
+
+/* Бекдроп */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Стили для баннера продукта */
+.product-banner {
+  height: 100vh; /* Занимает всю высоту экрана */
+  background-image: url("./iloveimg-converted/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+.banner-content {
+  max-width: 600px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.6
+  ); /* Полупрозрачный фон для читаемости текста */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.banner-title {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.banner-description {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.contact-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background-color: greenyellow;
+  color: gray;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.title-form {
+  color: #000;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal label {
+  margin: 10px 0 5px;
+}
+
+.modal input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal input::placeholder {
+  color: #888;
+}
+
+.send-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background-color: greenyellow;
+  color: gray;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 32px;
+  }
+
+  .banner-description {
+    font-size: 18px;
+  }
+}
+
+.about-product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.advantage-block {
+  width: 30%;
+  text-align: center;
+  margin: 10px;
+}
+
+.icon img {
+  width: 50px;
+  height: 50px;
+}
+
+.advantage-title {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.advantage-description {
+  font-size: 16px;
+}
+
+.reviews-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.review-card {
+  width: 30%;
+  text-align: center;
+  margin: 10px;
+}
+
+.review-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.review-name {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.review-text {
+  font-size: 16px;
+}
+
+/* Стили для секции "О продукте" */
+
+.about-product {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.advantage-block {
+  text-align: center;
+  max-width: 300px;
+}
+
+.icon {
+  margin-bottom: 20px;
+}
+
+.icon img {
+  width: 60px; /* Размер иконок */
+  height: 60px;
+}
+
+.advantage-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.advantage-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .about-product {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .advantage-block {
+    margin-bottom: 30px;
+  }
+}
+
+/* Стили для секции "Отзывы" */
+
+.reviews-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.review-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.review-avatar {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.review-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .review-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-card {
+    padding: 15px;
+  }
+
+  .review-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .review-name {
+    font-size: 16px;
+  }
+
+  .review-text {
+    font-size: 14px;
+  }
+}
+
+/* *************THANKS*********** */
+.thank-you-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+}
+.thanks-title {
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+.thanks-subtitle {
+  color: #555555;
+  font-size: 16px;
+}
+.thanks-ref {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+.thanks-ref:hover {
+  text-decoration: underline;
+}
